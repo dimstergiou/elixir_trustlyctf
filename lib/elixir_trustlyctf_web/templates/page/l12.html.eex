@@ -1,0 +1,5 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<p>
+    <img class="img12" src="<%= Routes.static_path(@conn, "/images/difference.png") %>" alt="Different views?" style="width: 50%; height: 50%"/>
+</p>

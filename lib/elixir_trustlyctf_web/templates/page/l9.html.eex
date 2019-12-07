@@ -1,0 +1,22 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>CISCO CNR Login System</h3>
+<div class="row">
+    <%= form_for @conn, Routes.page_path(@conn, :level9_post), [class: "col s12"], fn f -> %>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= label(f, :username, "Username") %>
+            <%= text_input f, :username, [class: "validate"] %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= label(f, :password, "Password") %>
+            <%= text_input f, :password, [class: "validate"] %>
+        </div>
+    </div>
+    <div class="row">
+        <%= submit "Login", [class: "btn"] %>
+    </div>
+</div>
+<%end %>

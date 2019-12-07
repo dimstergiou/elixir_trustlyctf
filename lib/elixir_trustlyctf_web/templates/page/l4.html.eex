@@ -1,0 +1,5 @@
+<h2>Level <%= @level %></h2>
+    <br>
+    <p>
+        <img src="<%= Routes.static_path(@conn, "/images/cookiemonster.jpg") %>" alt="Cookie monster" />
+    </p>

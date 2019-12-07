@@ -1,0 +1,5 @@
+<h2>Level <%= @level %></h2>
+    <br>
+    <p>
+        <img src="<%= Routes.static_path(@conn, "/images/base.jpg") %>" alt="All your base are belong to us">
+    </p>

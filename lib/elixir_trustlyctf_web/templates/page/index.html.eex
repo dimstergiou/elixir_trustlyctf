@@ -1,0 +1,4 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to 2020 Trustly CTF!" %></h1>
+  <p>A fun game to break things and learn things</p>
+</section>

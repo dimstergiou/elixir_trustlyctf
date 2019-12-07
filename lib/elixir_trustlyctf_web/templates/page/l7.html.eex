@@ -1,0 +1,7 @@
+<h2>Level <%= @level %></h2>
+    <br>
+    <p>
+        <h2>Not sure what you were looking for here.</h2>
+    <br>
+    There is a whole world behind this page
+    </p>

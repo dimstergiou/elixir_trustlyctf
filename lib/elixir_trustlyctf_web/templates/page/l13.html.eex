@@ -1,0 +1,5 @@
+<h2>Level <%= @level %></h2>
+
+<div class="alert alert-danger">
+    <strong>Oh no!</strong> It seems we lost this level - can you find a backup file to save the level?
+</div>
