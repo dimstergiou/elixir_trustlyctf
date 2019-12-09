@@ -36,3 +36,7 @@ npm-debug.log
 # DS_Store
 .DS_Store
 */.DS_Store
+
+node_modules/
+.elixir_ls/
+.idea/
