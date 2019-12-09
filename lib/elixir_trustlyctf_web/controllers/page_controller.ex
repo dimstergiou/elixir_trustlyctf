@@ -76,11 +76,10 @@ defmodule ElixirTrustlyctfWeb.PageController do
     query_string = params["name"]
     content = Ecto.Adapters.SQL.query!(
       ElixirTrustlyctf.Repo, "SELECT name,data from contents WHERE name=\'#{query_string}\'", []
+#      ElixirTrustlyctf.Repo, "SELECT name,data from contents", []
     )
     raw_data = result_to_maps(content)
     IO.inspect(raw_data)
-    data = for {key,val} <- raw_data, into: %{}, do: {String.to_atom(key), val}
-    IO.inspect(data)
     render(conn, "l15r.html", level: current_path(conn), data: raw_data)
   end
 end

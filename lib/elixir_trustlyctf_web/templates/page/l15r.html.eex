@@ -5,10 +5,10 @@
             <th>Data</th>
         </thead>
         <tbody>
-            <%= for {name, content} <- List.first(@data) do %>
+            <%= for item <- @data do %>
                 <tr>
-                    <td><%= name %></td>
-                    <td><%= content %></td>
+                    <td><%= item["name"] %></td>
+                    <td><%= item["data"] %></td>
                 </tr
             <% end %>
         </tbody>
