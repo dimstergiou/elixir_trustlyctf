@@ -76,7 +76,6 @@ defmodule ElixirTrustlyctfWeb.PageController do
     query_string = params["name"]
     content = Ecto.Adapters.SQL.query!(
       ElixirTrustlyctf.Repo, "SELECT name,data from contents WHERE name=\'#{query_string}\'", []
-#      ElixirTrustlyctf.Repo, "SELECT name,data from contents", []
     )
     raw_data = result_to_maps(content)
     IO.inspect(raw_data)
