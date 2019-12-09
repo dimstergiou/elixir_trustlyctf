@@ -78,7 +78,6 @@ defmodule ElixirTrustlyctfWeb.PageController do
       ElixirTrustlyctf.Repo, "SELECT name,data from contents WHERE name=\'#{query_string}\'", []
     )
     raw_data = result_to_maps(content)
-    IO.inspect(raw_data)
     render(conn, "l15r.html", level: current_path(conn), data: raw_data)
   end
 end
