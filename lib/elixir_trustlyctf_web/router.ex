@@ -29,6 +29,7 @@ defmodule ElixirTrustlyctfWeb.Router do
     get "/level13.backup", PageController, :level13_flag
     get "/level13.~", PageController, :level13_flag
     get "/8ZJwLBPD", PageController, :level15
+    post "/8ZJwLBPD", PageController, :level15_post
   end
 
   # Other scopes may use custom stacks.

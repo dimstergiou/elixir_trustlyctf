@@ -1,6 +1,18 @@
 defmodule ElixirTrustlyctfWeb.PageController do
   use ElixirTrustlyctfWeb, :controller
 
+
+  def row_to_map(col_nms, vals) do
+    Stream.zip(col_nms, vals)
+    |> Enum.into(Map.new(), &(&1))
+  end
+
+  def result_to_maps(%Postgrex.Result{columns: _, rows: nil}), do: []
+
+  def result_to_maps(%Postgrex.Result{columns: col_nms, rows: rows}) do
+    Enum.map(rows, fn(row) -> row_to_map(col_nms, row) end)
+  end
+
   def index(conn, _params) do
     render(conn, "index.html")
   end
@@ -55,4 +67,22 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level13_flag(conn, _params) do
     text conn, "The flag is: flag{tdd}"
   end
+
+  def level15(conn, _params) do
+    render(conn, "l15.html", level: current_path conn)
+  end
+
+  def level15_post(conn, params) do
+    query_string = params["name"]
+    content = Ecto.Adapters.SQL.query!(
+      ElixirTrustlyctf.Repo, "SELECT name,data from contents WHERE name=\'#{query_string}\'", []
+    )
+    raw_data = result_to_maps(content)
+    IO.inspect(raw_data)
+    data = for {key,val} <- raw_data, into: %{}, do: {String.to_atom(key), val}
+    IO.inspect(data)
+    render(conn, "l15r.html", level: current_path(conn), data: raw_data)
+  end
 end
+
+

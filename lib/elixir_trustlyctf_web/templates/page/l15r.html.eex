@@ -1,0 +1,16 @@
+<div class="row">
+    <table border=0>
+        <thead>
+            <th>User</th>
+            <th>Data</th>
+        </thead>
+        <tbody>
+            <%= for {name, content} <- List.first(@data) do %>
+                <tr>
+                    <td><%= name %></td>
+                    <td><%= content %></td>
+                </tr
+            <% end %>
+        </tbody>
+    </table>
+</div>
