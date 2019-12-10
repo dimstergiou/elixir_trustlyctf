@@ -2,4 +2,5 @@
 <br/>
 <p>
     A nice static page!
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/sixteen.js") %>"></script>
 </p>
