@@ -89,4 +89,8 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level16(conn, _params) do
     render(conn, "l16.html", level: current_path(conn))
   end
+
+  def level17(conn, _params) do
+    render(conn, "l17.html", level: current_path(conn))
+  end
 end
