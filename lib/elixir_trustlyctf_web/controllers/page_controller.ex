@@ -136,4 +136,16 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level23_flag(conn, _params) do
     text(conn, "flag{ultron}")
   end
+
+  def level24(conn, _params) do
+    userAgent = hd(Plug.Conn.get_req_header(conn, "user-agent"))
+
+    if Browser.mobile?(userAgent) do
+      conn
+      |> put_flash(:info, "Well done. The flag is: flag{anna}")
+      |> render("l24.html", level: current_path(conn))
+    else
+      render(conn, "l24.html", level: current_path(conn))
+    end
+  end
 end

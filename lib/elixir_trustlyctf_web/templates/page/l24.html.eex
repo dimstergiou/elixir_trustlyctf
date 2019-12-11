@@ -1,0 +1,5 @@
+  <h2>Level <%= @level %></h2>
+  <br/>
+  <p>Sometime is not simple to get the correct viewpoint. <br>
+    What can change how this page looks?
+  </p>
