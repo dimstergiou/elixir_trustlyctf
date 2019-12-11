@@ -115,4 +115,17 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level20(conn, _params) do
     render(conn, "l20.html", level: current_path(conn))
   end
+
+  def level22(conn, _params) do
+    secret_header = Plug.Conn.get_req_header(conn, "secret")
+    IO.inspect(secret_header)
+
+    if hd(secret_header) == "Innovation" do
+      conn
+      |> put_flash(:info, "Well done. The flag is: flag{awesome}")
+      |> render("l22.html", level: current_path(conn))
+    else
+      render(conn, "l22.html", level: current_path(conn))
+    end
+  end
 end
