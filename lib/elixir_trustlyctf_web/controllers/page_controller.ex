@@ -231,4 +231,8 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level30_get(conn, _params) do
     text conn, "Nothing here"
   end
+
+  def level34(conn,_params ) do
+    render(conn, "l34.html", level: current_path(conn))
+  end
 end

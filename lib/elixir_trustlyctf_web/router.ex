@@ -52,6 +52,7 @@ defmodule ElixirTrustlyctfWeb.Router do
     get "/zKJ0DJ5R", PageController, :level30
     get "/supersecret.txt", PageController, :level30_get
     post "/supersecret.txt", PageController, :level30_get
+    get "/VeBY8J5R", PageController, :level34
   end
 
   scope "/", ElixirTrustlyctfWeb do
