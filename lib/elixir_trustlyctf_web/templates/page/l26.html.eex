@@ -1,0 +1,12 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>Easy flag</h3>
+<p>Click the button, get the flag</p>
+
+<%= form_for @conn, Routes.page_path(@conn, :level26_post), [class: "col s12"], fn f -> %>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= submit "Click me", [class: "btn"] %>
+        </div>
+    </div>
+<% end%>

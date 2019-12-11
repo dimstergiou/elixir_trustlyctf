@@ -165,4 +165,22 @@ defmodule ElixirTrustlyctfWeb.PageController do
         |> render("l25.html", level: current_path(conn))
     end
   end
+
+  def level26(conn, _params) do
+    render(conn, "l26.html", level: current_path(conn))
+  end
+
+  def level26_post(conn, _params) do
+    userAgent = hd(Plug.Conn.get_req_header(conn, "user-agent"))
+
+    if Browser.bot?(userAgent) do
+      conn
+      |> put_flash(:info, "Well done. The flag is: flag{bing}")
+      |> render("l26.html", level: current_path(conn))
+    else
+      conn
+      |> put_flash(:error, "You are not Google! You are #{userAgent}")
+      |> render("l26.html", level: current_path(conn))
+    end
+  end
 end
