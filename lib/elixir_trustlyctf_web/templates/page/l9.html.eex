@@ -2,7 +2,7 @@
 <br/>
 <h3>CISCO CNR Login System</h3>
 <div class="row">
-    <%= form_for @conn, Routes.page_path(@conn, :level9_post), [class: "col s12"], fn f -> %>
+    <%= form_for @conn, Routes.page_path(@conn, :level9), [class: "col s12"], fn f -> %>
     <div class="row">
         <div class="input-field col s12">
             <%= label(f, :username, "Username") %>
@@ -16,7 +16,9 @@
         </div>
     </div>
     <div class="row">
-        <%= submit "Login", [class: "btn"] %>
+        <div class="input-field col s12">
+            <%= submit "Login", [class: "btn"] %>
+        </div>
     </div>
 </div>
 <%end %>

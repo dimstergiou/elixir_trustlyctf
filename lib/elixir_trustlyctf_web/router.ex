@@ -32,6 +32,8 @@ defmodule ElixirTrustlyctfWeb.Router do
     post "/8ZJwLBPD", PageController, :level15_post
     get "/gRJVOBe2", PageController, :level16
     get "/NjnLg9qx", PageController, :level17
+    get "/eVBX19r8", PageController, :level19
+    post "/eVBX19r8", PageController, :level19_post
   end
 
   # Other scopes may use custom stacks.

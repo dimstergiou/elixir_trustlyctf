@@ -93,4 +93,22 @@ defmodule ElixirTrustlyctfWeb.PageController do
   def level17(conn, _params) do
     render(conn, "l17.html", level: current_path(conn))
   end
+
+  def level19(conn, _params) do
+    render(conn, "l19.html", level: current_path(conn))
+  end
+
+  def level19_post(conn, params) do
+    right_answer = ["Trustly", "trustly", "TRUSTLY"]
+
+    if Enum.member?(right_answer, params["company"]) do
+      conn
+      |> put_flash(:info, "Well done. The flag is: flag{oscar}")
+      |> render("l19.html", level: current_path(conn))
+    else
+      conn
+      |> put_flash(:error, "Not quite")
+      |> render("l19.html", level: current_path(conn))
+    end
+  end
 end

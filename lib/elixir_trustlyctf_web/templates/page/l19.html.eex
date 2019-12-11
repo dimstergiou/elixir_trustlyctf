@@ -1,0 +1,36 @@
+
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>Selection</h3>
+<p>What is the best FinTech company? You HAVE to answer Trustly </p>
+
+<script>
+$(document).ready(function(){
+    $('select').formSelect();
+});
+</script>
+<%= form_for @conn, Routes.page_path(@conn, :level19_post), [class: "col s12"], fn f -> %>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= label(f, :company, "Company") %>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="input-field col s12">
+                <%= select f, :company, [
+                    [key: "Klarna", value: "klarna"],
+                    [key: "Tink", value: "tink"],
+                    [key: "iZettle", value: "izettle"],
+                    [key: "PayPal", value: "paypal"]
+                ], [prompt: "Choose a company", class: "browser-default"] %>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="input-field col s12">
+                <%= submit "Choose", [class: "btn"] %>
+            </div>
+    </div>
+<% end %>
+

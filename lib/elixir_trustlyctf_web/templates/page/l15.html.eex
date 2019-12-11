@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row">
-            <%= submit "Login", [class: "btn"] %>
+            <%= submit "Search", [class: "btn"] %>
         </div>
     <%end %>
 </div>
