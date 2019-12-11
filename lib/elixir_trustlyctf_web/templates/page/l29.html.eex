@@ -1,0 +1,4 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>Accessible only from internal IP addresses</h3>
+<p>Super secret page</p>

@@ -201,4 +201,23 @@ defmodule ElixirTrustlyctfWeb.PageController do
         |> render("l27.html", level: current_path(conn))
     end
   end
+
+  def level29(conn, _params) do
+    ip = List.first(Plug.Conn.get_req_header(conn, "x-forwarded-for"))
+    case ip do
+      nil ->
+        conn
+        |> put_flash(:error, "This page is only accessible from 1.1.1.1")
+        |> render("l29.html", level: current_path(conn))
+      "1.1.1.1" ->
+        conn
+        |> put_flash(:info, "Welcome internal user. The flag is: flag{dorna}")
+        |> render("l29.html", level: current_path(conn))
+      _ ->
+          conn
+          |> put_flash(:error, "This page is only accessible from 1.1.1.1")
+          |> render("l29.html", level: current_path(conn))
+    end
+  end
+
 end
