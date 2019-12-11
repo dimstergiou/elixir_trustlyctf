@@ -1,0 +1,20 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>Payment</h3>
+<p>Hope you are enjoying the game. For this flag, give us a valid credit card number</p>
+
+<div class="row">
+    <%= form_for @conn, Routes.page_path(@conn, :level25), [class: "col s12"], fn f -> %>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= label(f, :creditcard, "Credit Card") %>
+            <%= text_input f, :creditcard, [class: "validate"] %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <%= submit "Pay!", [class: "btn"] %>
+        </div>
+    </div>
+</div>
+<%end %>

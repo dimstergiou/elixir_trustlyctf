@@ -148,4 +148,21 @@ defmodule ElixirTrustlyctfWeb.PageController do
       render(conn, "l24.html", level: current_path(conn))
     end
   end
+
+  def level25(conn, _params) do
+    render(conn, "l25.html", level: current_path(conn))
+  end
+  def level25_post(conn, params) do
+    creditcard = params["creditcard"]
+    case CcValidation.validate(creditcard) do
+      {:ok, true} ->
+        conn
+        |> put_flash(:info, "Thank you. The flag is: flag{money}")
+        |> render("l25.html", level: current_path conn)
+      {:error, false} ->
+        conn
+        |> put_flash(:error, "#{creditcard} is not a valid credit card number")
+        |> render("l25.html", level: current_path(conn))
+    end
+  end
 end

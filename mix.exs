@@ -43,7 +43,8 @@ defmodule ElixirTrustlyctf.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:browser, "~>0.4.4"}
+      {:browser, "~> 0.4.4"},
+      {:cc_validation, "~> 0.1.0"}
     ]
   end
 
