@@ -183,4 +183,22 @@ defmodule ElixirTrustlyctfWeb.PageController do
       |> render("l26.html", level: current_path(conn))
     end
   end
+  def level27(conn, _params) do
+    cookies = conn.cookies["is_admin"]
+    case cookies do
+      nil ->
+        conn
+        |> put_resp_cookie("is_admin", "0", path: current_path(conn))
+        |> put_flash(:error, "You need to be an admin to access the full page")
+        |> render("l27.html", level: current_path(conn))
+      "0" ->
+        conn
+        |> put_flash(:error, "You need to be an admin to access the full page")
+        |> render("l27.html", level: current_path(conn))
+      "1" ->
+        conn
+        |> put_flash(:info, "Welcome admin. The flag is: flag{john}")
+        |> render("l27.html", level: current_path(conn))
+    end
+  end
 end

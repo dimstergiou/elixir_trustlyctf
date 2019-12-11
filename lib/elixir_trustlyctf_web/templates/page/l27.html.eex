@@ -1,0 +1,6 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<p>Does this mean anything?</p>
+<div class="jumbotron">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet lectus nec eros molestie, lacinia accumsan ipsum dictum. Vestibulum vestibulum a urna vitae suscipit. Nulla venenatis ipsum tellus, ut placerat elit faucibus sit amet. In eu turpis non sem semper facilisis. In consequat neque mollis mattis vulputate. Quisque mi lorem, semper id ante at, ultrices ornare ipsum. In gravida mi vitae ante commodo, consequat viverra sapien lobortis. Ut ornare, diam id sagittis porttitor, elit magna ullamcorper eros, ac rutrum tellus erat vitae sem. Morbi quam nulla, pellentesque sit amet augue quis, gravida scelerisque tortor. Quisque non dolor sit amet lectus dictum aliquet nec tempus dui. Vivamus tellus ante, egestas sit amet diam ut, congue accumsan augue. Curabitur auctor congue lacus ut rhoncus. In dui nibh, eleifend nec ligula vitae, elementum tincidunt mauris.</p>
+</div>
