@@ -128,4 +128,12 @@ defmodule ElixirTrustlyctfWeb.PageController do
       render(conn, "l22.html", level: current_path(conn))
     end
   end
+
+  def level23(conn, _params) do
+    render(conn, "l23.html", level: current_path(conn))
+  end
+
+  def level23_flag(conn, _params) do
+    text(conn, "flag{ultron}")
+  end
 end
