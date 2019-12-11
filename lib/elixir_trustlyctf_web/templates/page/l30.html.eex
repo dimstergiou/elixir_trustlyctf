@@ -1,0 +1,4 @@
+<h2>Level <%= @level %></h2>
+<br/>
+<h3>Delete, delete, delete</h3>
+<p>Your goal is to delete the /supersecret.txt file from the server</p>

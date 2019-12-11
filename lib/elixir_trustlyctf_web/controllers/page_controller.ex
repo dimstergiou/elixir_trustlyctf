@@ -220,4 +220,15 @@ defmodule ElixirTrustlyctfWeb.PageController do
     end
   end
 
+  def level30(conn, _params) do
+    render(conn, "l30.html", level: current_path(conn))
+  end
+
+  def level30_delete(conn, _params) do
+    text conn, "flag{swtor}"
+  end
+
+  def level30_get(conn, _params) do
+    text conn, "Nothing here"
+  end
 end

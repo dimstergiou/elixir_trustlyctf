@@ -5,8 +5,12 @@ defmodule ElixirTrustlyctfWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
-    plug :protect_from_forgery
+
     plug :put_secure_browser_headers
+  end
+
+  pipeline :csrf do
+    plug :protect_from_forgery
   end
 
   pipeline :api do
@@ -14,7 +18,7 @@ defmodule ElixirTrustlyctfWeb.Router do
   end
 
   scope "/", ElixirTrustlyctfWeb do
-    pipe_through :browser
+    pipe_through [:browser, :csrf]
 
     get "/", PageController, :index
     get "/7gJm1Jjr", PageController, :level1
@@ -44,9 +48,16 @@ defmodule ElixirTrustlyctfWeb.Router do
     get "/EdB1aBKx", PageController, :level26
     post "/EdB1aBKx", PageController, :level26_post
     get "/vz95bnKg", PageController, :level27
-    get "zr9ko9x6", PageController, :level29
+    get "/zr9ko9x6", PageController, :level29
+    get "/zKJ0DJ5R", PageController, :level30
+    get "/supersecret.txt", PageController, :level30_get
+    post "/supersecret.txt", PageController, :level30_get
   end
 
+  scope "/", ElixirTrustlyctfWeb do
+    pipe_through :browser
+    delete "/supersecret.txt", PageController, :level30_delete
+  end
   # Other scopes may use custom stacks.
   # scope "/api", ElixirTrustlyctfWeb do
   #   pipe_through :api
