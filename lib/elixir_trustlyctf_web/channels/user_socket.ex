@@ -4,7 +4,7 @@ defmodule ElixirTrustlyctfWeb.UserSocket do
   ## Channels
   # channel "room:*", ElixirTrustlyctfWeb.RoomChannel
 
-  channel "flag:*", ElixirTrustlyctfWeb.RoomChannel
+  #channel "flag:*", ElixirTrustlyctfWeb.RoomChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
